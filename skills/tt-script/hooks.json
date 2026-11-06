@@ -1,0 +1,231 @@
+{
+ "hooks": [
+  {
+   "example": "There is a computer inside your earbuds smaller than your fingernail.",
+   "fails_when": "Dies if the inside is not actually surprising. If the mechanism is ordinary, use a different formula.",
+   "id": "the-impossible-inside",
+   "match": [
+    "\\binside (your|the|this|a|an)\\b",
+    "\\bthere is (a|an) .* inside\\b",
+    "\\bsmaller than\\b"
+   ],
+   "name": "The Impossible Inside",
+   "shape": "A tiny thing inside an ordinary object doing something the viewer did not expect."
+  },
+  {
+   "example": "97% of the people who start a channel quit before video 30. Here is what the other 3% do differently.",
+   "fails_when": "Dies if the number is vague or unverifiable. Say the source out loud.",
+   "id": "the-statistic",
+   "match": [
+    "\\b\\d+(\\.\\d+)?\\s?%",
+    "\\b\\d+ (out of|in) \\d+\\b",
+    "\\b\\d{2,}(,\\d{3})+\\b"
+   ],
+   "name": "The Statistic",
+   "shape": "A number the viewer did not know, stated flat, then the consequence."
+  },
+  {
+   "example": "You have been charging your phone wrong for years. It is not the cable.",
+   "fails_when": "Only works if the mistake is common and the viewer can check it in one second.",
+   "id": "the-mistake",
+   "match": [
+    "\\byou('re| are) (probably |still )?(doing|making)\\b",
+    "\\bthe (mistake|reason) (everyone|most people|nobody)\\b",
+    "\\bstop (doing )?\\b",
+    "\\byou have been .* wrong\\b"
+   ],
+   "name": "The Mistake",
+   "shape": "Name the error the viewer is probably making right now."
+  },
+  {
+   "example": "This is what actually happens inside your microwave when you press start.",
+   "fails_when": "Dies if the mechanism is just a description. It needs a surprise step the viewer did not know existed.",
+   "id": "the-hidden-mechanism",
+   "match": [
+    "\\bwhat (actually |really )?happens (inside|when)\\b",
+    "\\bhere is what .* (does|happens)\\b",
+    "\\bactually happens\\b"
+   ],
+   "name": "The Hidden Mechanism",
+   "shape": "What actually happens when you do the ordinary thing."
+  },
+  {
+   "example": "I saved $400 on flights with one search trick. Here it is.",
+   "fails_when": "Dies if the payoff is vague. 'Save money' is not a payoff. '$400' is.",
+   "id": "the-payoff-first",
+   "match": [
+    "^\\s*(i|we|this) (saved|made|cut|earned|fixed|doubled|halved)",
+    "\\$\\d",
+    "\\b(save[d]?|make[s]?|cut) \\$?\\d"
+   ],
+   "name": "The Payoff First",
+   "shape": "The result first, then the how. The number or outcome lands in the first 8 words."
+  },
+  {
+   "example": "Why does your phone get hot when it does nothing?",
+   "fails_when": "Dies if the viewer can answer it in one second. 'Why is the sky blue' is homework, not a hook.",
+   "id": "the-question-you-cant-close",
+   "match": [
+    "^\\s*why (do|does|is|are|can|would|did)",
+    "^\\s*how (do|does|is|are|can|did)",
+    "^\\s*what (happens|if|would)"
+   ],
+   "name": "The Question You Can't Close",
+   "shape": "A question with no obvious answer that the video promises to close."
+  },
+  {
+   "example": "Everyone thinks noise cancelling blocks sound. It makes sound.",
+   "fails_when": "Dies if the flip is not actually true. A fake contrarian take is a lie with a hook on it.",
+   "id": "the-contrarian-flip",
+   "match": [
+    "\\beveryone thinks\\b",
+    "\\bit('s| is) (not|the opposite|actually)",
+    "\\bnot what you think\\b"
+   ],
+   "name": "The Contrarian Flip",
+   "shape": "Everyone thinks X. It is the opposite."
+  },
+  {
+   "example": "This used to take five hours. Twenty minutes now.",
+   "fails_when": "Dies if the gap is small. Five hours to four hours is a shrug.",
+   "id": "the-before-after",
+   "match": [
+    "\\bused to (take|cost|be)\\b",
+    "\\bfrom .* to .*\\b",
+    "\\bbefore .* now\\b"
+   ],
+   "name": "The Before After",
+   "shape": "The old way against the new way, with the gap as the hook."
+  },
+  {
+   "example": "I billed four hours a week for formatting. For two years.",
+   "fails_when": "Dies if the cost is not real. An invented confession is a lie the audience can feel.",
+   "id": "the-cost-confession",
+   "match": [
+    "\\bi (wasted|lost|spent|paid|billed)\\b",
+    "\\bfor (two|three|\\d+) years\\b",
+    "\\bcost me\\b"
+   ],
+   "name": "The Cost Confession",
+   "shape": "What it cost the speaker, stated plainly."
+  },
+  {
+   "example": "Nobody tells you your earbuds have a tiny microphone that never turns off.",
+   "fails_when": "Dies if the secret is common knowledge. If everyone knows it, the hook insults the viewer.",
+   "id": "the-nobody-tells-you",
+   "match": [
+    "\\bnobody (tells|told|mentions|talks)\\b",
+    "\\bno one tells you\\b",
+    "\\bthe (secret|thing) nobody\\b"
+   ],
+   "name": "The Nobody Tells You",
+   "shape": "The thing nobody mentions, stated as a secret the viewer is about to get."
+  },
+  {
+   "example": "One setting makes your videos load twice as fast. It is not the quality.",
+   "fails_when": "Dies if the one thing is vague. 'One tip' is a placeholder, not a hook.",
+   "id": "the-one-thing",
+   "match": [
+    "\\bone (thing|setting|trick|change|button)\\b",
+    "\\ball it takes is\\b",
+    "\\bthe one .* that\\b"
+   ],
+   "name": "The One Thing",
+   "shape": "One thing makes all the difference. Name the thing, not the category."
+  },
+  {
+   "example": "We dropped the same phone 20 times to find where it actually breaks.",
+   "fails_when": "Dies if there is no real test behind it. A fake test is a fake claim.",
+   "id": "the-test",
+   "match": [
+    "\\bwe (tested|tried|dropped|opened|took apart)\\b",
+    "\\bi tested\\b",
+    "\\bso you don('t| t) have to\\b"
+   ],
+   "name": "The Test",
+   "shape": "We tested it so you do not have to. The result is the hook."
+  },
+  {
+   "example": "Here is what your earbuds look like on the inside. That dot is the whole computer.",
+   "fails_when": "Dies if the inside is not shown in frame 1. The words alone cannot carry it.",
+   "id": "the-inside-look",
+   "match": [
+    "\\bhere is what .* (looks like|look like) inside\\b",
+    "\\bthis is what .* looks like inside\\b",
+    "\\bon the inside\\b"
+   ],
+   "name": "The Inside Look",
+   "shape": "Here is what it looks like inside. The image is the hook; the words point at it."
+  },
+  {
+   "example": "Why does a microwave heat food but not the plate?",
+   "fails_when": "Dies if the answer is 'because science'. The mechanism has to be visible in the video.",
+   "id": "the-why",
+   "match": [
+    "^\\s*why (do|does|is|are|can|would)",
+    "\\bthe reason .* (is|is not)\\b"
+   ],
+   "name": "The Why",
+   "shape": "Why does the ordinary thing behave that way. The answer must be a mechanism, not a slogan."
+  },
+  {
+   "example": "Your microwave does not cook food from the inside out. It does the opposite.",
+   "fails_when": "Dies if the myth is not widely believed. Correcting a belief nobody holds is a lecture.",
+   "id": "the-myth",
+   "match": [
+    "\\bdoes(n't| not) work the way\\b",
+    "\\bnot (how|what) you think\\b",
+    "\\bmyth\\b"
+   ],
+   "name": "The Myth",
+   "shape": "The thing does not work the way you think it does."
+  },
+  {
+   "example": "This chip is 5 millimeters wide. It runs your entire phone.",
+   "fails_when": "Dies if the number has no consequence. A number without a 'so what' is trivia.",
+   "id": "the-tiny-number",
+   "match": [
+    "\\b\\d+ (millimeter|mm|gram|second|millisecond)s?\\b",
+    "\\bjust \\d+\\b",
+    "\\bonly \\d+\\b"
+   ],
+   "name": "The Tiny Number",
+   "shape": "A small, specific number that reframes the whole object."
+  },
+  {
+   "example": "Every time you do this, your battery loses a little of its life for good.",
+   "fails_when": "Dies if the stake is invented or exaggerated. A false stake is a scare tactic.",
+   "id": "the-stakes",
+   "match": [
+    "\\bevery time you\\b",
+    "\\bif you keep\\b",
+    "\\bbefore it('s| is) too late\\b",
+    "\\byou('re| are) (killing|ruining|breaking)\\b"
+   ],
+   "name": "The Stakes",
+   "shape": "Name what it costs to keep doing it the current way."
+  },
+  {
+   "example": "Watch the dot in the corner. Now watch it again.",
+   "fails_when": "Dies if the video has no detail worth a second watch. A loop with nothing to find is a gimmick.",
+   "id": "the-loop",
+   "match": [
+    "\\bwatch (this|it|the) (again|twice)\\b",
+    "\\bmissed it\\b",
+    "\\bdid you (see|catch|notice)\\b"
+   ],
+   "name": "The Loop",
+   "shape": "A hook that makes the viewer watch twice. The last line echoes the first."
+  }
+ ],
+ "note": "18 hook formulas for TikTok. A TikTok hook is the first 1 to 3 seconds and it does two jobs: stop the thumb and open a question the viewer cannot close. A hook that only describes the video is a title card and it leaks. Every formula here carries the shape, a worked example, the failure mode, and the patterns hookscore.py classifies transcribed speech against. Formulas 1, 4 and 13 are the teardown natives: they work best when the video shows a mechanism, not a face.",
+ "rules": [
+  "One idea. A hook carrying two promises keeps neither.",
+  "Specific beats big. '400 to 200,000 in seven months' outperforms 'massive growth'.",
+  "The payoff or the mystery lands inside the first 8 words. On TikTok the viewer decides before the sentence ends.",
+  "Show the thing in frame 1. The first image is the hook too.",
+  "Never open with who you are. The subscribe pitch has not been earned yet.",
+  "Never promise what the video does not deliver. The payoff must land before the last beat."
+ ],
+ "version": "1.0"
+}
